@@ -1,0 +1,11 @@
+#lang sicp
+(define (front-entry lis)
+  (cond ((= (car lis) 2) 0)
+        ((= (car lis) 1) (+ 1 (front-entry (cdr lis))))
+        ((= (car lis) 0) (+ 2 (front-entry (cdr lis))))))
+(define (back-entry lis)
+  (front-entry (reverse lis)))
+(define (ques-2 function-name lis)
+  (if (null? lis) 0
+      (function-name lis)))
+
